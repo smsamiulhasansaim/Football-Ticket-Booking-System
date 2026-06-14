@@ -79,3 +79,16 @@ WHERE total_cost > (
     FROM bookings
 );
 
+
+-- Query 7: Retrieve the top 2 most expensive matches sorted by
+--          base_ticket_price, skipping the single highest match
+-- Concepts: ORDER BY, LIMIT, OFFSET
+
+SELECT
+    match_id,
+    fixture,
+    base_ticket_price
+FROM matches
+ORDER BY base_ticket_price DESC
+LIMIT 2 OFFSET 1;
+ 
