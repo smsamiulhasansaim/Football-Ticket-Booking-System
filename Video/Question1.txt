@@ -1,0 +1,2 @@
+A Foreign Key is a column in one table that refers to the Primary Key of another table. In our Bookings table, user_id is a Foreign Key that points to user_id in the Users table, and match_id points to the Matches table.
+It protects referential integrity. For example, if someone tries to insert a booking for match_id = 999 which doesn't exist in the Matches table, the database will automatically reject that insert and throw an error. So a ticket can never be sold for a match that doesn't exist in the system.

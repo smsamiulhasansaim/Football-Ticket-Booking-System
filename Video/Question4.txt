@@ -1,0 +1,2 @@
+When we do a LEFT JOIN from Users to Bookings, all rows from the left table — Users — are returned, even if there is no matching row in the right table — Bookings.
+In our data, Jannat Ara has never bought a ticket. So when the LEFT JOIN runs, her user_id, full_name will show in the result, but all columns from the Bookings table like booking_id, seat_number will show as NULL. This is exactly what we see in Query 5's output — Jannat Ara appears with a NULL booking_id. If we used INNER JOIN instead, she would be completely invisible in the result.

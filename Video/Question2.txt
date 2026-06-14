@@ -1,0 +1,2 @@
+The WHERE clause filters rows before any grouping or aggregation happens. So when the database executes WHERE, it hasn't calculated COUNT yet — it doesn't know the value. That's why using COUNT(booking_id) inside WHERE throws an error.
+HAVING solves this because it runs after GROUP BY and aggregation are complete. So HAVING can see the result of COUNT and filter based on it. A simple example: if we want matches that have more than 2 bookings, we use GROUP BY match_id HAVING COUNT(booking_id) > 2 — not WHERE.
