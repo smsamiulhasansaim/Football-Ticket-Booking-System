@@ -66,7 +66,7 @@ LEFT JOIN bookings b ON u.user_id = b.user_id
 ORDER BY u.user_id;
 
 -- Query 6: Find all ticket bookings where total_cost is
---          strictly higher than the average cost of all bookings
+-- strictly higher than the average cost of all bookings
 -- Concepts: Subquery / Aggregate
  
 SELECT
@@ -81,7 +81,7 @@ WHERE total_cost > (
 
 
 -- Query 7: Retrieve the top 2 most expensive matches sorted by
---          base_ticket_price, skipping the single highest match
+-- base_ticket_price, skipping the single highest match
 -- Concepts: ORDER BY, LIMIT, OFFSET
 
 SELECT
