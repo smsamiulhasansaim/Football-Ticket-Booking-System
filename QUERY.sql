@@ -27,3 +27,16 @@ FROM users
 WHERE full_name ILIKE 'Tanvir%'
    OR full_name ILIKE '%Haque%';
  
+-- Query 3: Retrieve all booking records where payment_status
+-- is NULL, replacing it with 'Action Required'
+-- Concepts: IS NULL, COALESCE
+ 
+SELECT
+    booking_id,
+    user_id,
+    match_id,
+    COALESCE(payment_status, 'Action Required') AS systematic_status
+FROM bookings
+WHERE payment_status IS NULL;
+
+
